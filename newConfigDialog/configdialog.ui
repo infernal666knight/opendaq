@@ -1,0 +1,1233 @@
+<ui version="4.0" >
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>680</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>680</width>
+    <height>470</height>
+   </size>
+  </property>
+  <property name="maximumSize" >
+   <size>
+    <width>680</width>
+    <height>470</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>Measurement configuration</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>250</x>
+     <y>430</y>
+     <width>210</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_11" >
+    <item>
+     <widget class="QPushButton" name="cancel_button" >
+      <property name="text" >
+       <string>Cance&amp;l</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="proceed_button" >
+      <property name="text" >
+       <string>&amp;Proceed</string>
+      </property>
+      <property name="default" >
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>12</x>
+     <y>10</y>
+     <width>205</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_13" >
+    <item>
+     <widget class="QLabel" name="table_label1" >
+      <property name="text" >
+       <string>&amp;Table shows every</string>
+      </property>
+      <property name="buddy" >
+       <cstring>table_spin</cstring>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="table_spin" />
+    </item>
+    <item>
+     <widget class="QLabel" name="table_label2" >
+      <property name="text" >
+       <string>result</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>230</x>
+     <y>10</y>
+     <width>208</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_14" >
+    <item>
+     <widget class="QLabel" name="graph_label1" >
+      <property name="text" >
+       <string>&amp;Chart shows every</string>
+      </property>
+      <property name="buddy" >
+       <cstring>chart_spin</cstring>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="chart_spin" />
+    </item>
+    <item>
+     <widget class="QLabel" name="graph_label2" >
+      <property name="text" >
+       <string>result </string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>9</x>
+     <y>43</y>
+     <width>211</width>
+     <height>112</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_5" >
+    <item>
+     <widget class="QLabel" name="measure_label" >
+      <property name="minimumSize" >
+       <size>
+        <width>150</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize" >
+       <size>
+        <width>150</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text" >
+       <string>&amp;Number of measurements</string>
+      </property>
+      <property name="buddy" >
+       <cstring>measure_slider</cstring>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_16" >
+      <item>
+       <widget class="QSlider" name="measure_slider" >
+        <property name="minimumSize" >
+         <size>
+          <width>125</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>125</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="minimum" >
+         <number>5</number>
+        </property>
+        <property name="maximum" >
+         <number>1000000</number>
+        </property>
+        <property name="singleStep" >
+         <number>5</number>
+        </property>
+        <property name="pageStep" >
+         <number>5</number>
+        </property>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="measure_spin" >
+        <property name="minimumSize" >
+         <size>
+          <width>75</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>75</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="minimum" >
+         <number>5</number>
+        </property>
+        <property name="maximum" >
+         <number>1000000</number>
+        </property>
+        <property name="singleStep" >
+         <number>5</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="interval_label" >
+      <property name="minimumSize" >
+       <size>
+        <width>208</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize" >
+       <size>
+        <width>208</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text" >
+       <string>Measurement &amp;Interval, milliseconds</string>
+      </property>
+      <property name="buddy" >
+       <cstring>interval_slider</cstring>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_17" >
+      <item>
+       <widget class="QSlider" name="interval_slider" >
+        <property name="minimumSize" >
+         <size>
+          <width>125</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>125</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="minimum" >
+         <number>10</number>
+        </property>
+        <property name="maximum" >
+         <number>1000000</number>
+        </property>
+        <property name="singleStep" >
+         <number>1</number>
+        </property>
+        <property name="value" >
+         <number>10</number>
+        </property>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="interval_spin" >
+        <property name="minimumSize" >
+         <size>
+          <width>75</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>75</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="minimum" >
+         <number>10</number>
+        </property>
+        <property name="maximum" >
+         <number>1000000</number>
+        </property>
+        <property name="value" >
+         <number>10</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>231</x>
+     <y>51</y>
+     <width>274</width>
+     <height>53</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2" >
+    <property name="sizeConstraint" >
+     <enum>QLayout::SetFixedSize</enum>
+    </property>
+    <item>
+     <widget class="QLabel" name="filename_label" >
+      <property name="text" >
+       <string>&amp;File name</string>
+      </property>
+      <property name="buddy" >
+       <cstring>filename_edit</cstring>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_15" >
+      <property name="sizeConstraint" >
+       <enum>QLayout::SetFixedSize</enum>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="filename_edit" >
+        <property name="minimumSize" >
+         <size>
+          <width>225</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>225</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="readOnly" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="filename_button" >
+        <property name="minimumSize" >
+         <size>
+          <width>35</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>35</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="text" >
+         <string>...</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="mode_box" >
+   <property name="geometry" >
+    <rect>
+     <x>230</x>
+     <y>120</y>
+     <width>150</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>150</width>
+     <height>100</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>150</width>
+     <height>100</height>
+    </size>
+   </property>
+   <property name="title" >
+    <string>Mode</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout" >
+    <item row="0" column="0" >
+     <layout class="QVBoxLayout" name="verticalLayout" >
+      <item>
+       <widget class="QRadioButton" name="single_button" >
+        <property name="text" >
+         <string>&amp;Single series</string>
+        </property>
+        <property name="checked" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="cycled_button" >
+        <property name="text" >
+         <string>Cycle&amp;d series</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="scheduled_button" >
+        <property name="text" >
+         <string>Sc&amp;heduled series</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="color_box" >
+   <property name="geometry" >
+    <rect>
+     <x>8</x>
+     <y>159</y>
+     <width>210</width>
+     <height>262</height>
+    </rect>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>210</width>
+     <height>262</height>
+    </size>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>210</width>
+     <height>262</height>
+    </size>
+   </property>
+   <property name="title" >
+    <string>Graph colors</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2" >
+    <item row="0" column="0" >
+     <layout class="QHBoxLayout" name="horizontalLayout" >
+      <item>
+       <widget class="QLabel" name="color_label1" >
+        <property name="text" >
+         <string>Channel &amp;1</string>
+        </property>
+        <property name="buddy" >
+         <cstring>color_button1</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="color_button1" >
+        <property name="text" >
+         <string>Change</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0" >
+     <layout class="QHBoxLayout" name="horizontalLayout_2" >
+      <item>
+       <widget class="QLabel" name="color_label2" >
+        <property name="text" >
+         <string>Channel &amp;2</string>
+        </property>
+        <property name="buddy" >
+         <cstring>color_button2</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="color_button2" >
+        <property name="text" >
+         <string>Change</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0" >
+     <layout class="QHBoxLayout" name="horizontalLayout_3" >
+      <item>
+       <widget class="QLabel" name="color_label3" >
+        <property name="text" >
+         <string>Channel &amp;3</string>
+        </property>
+        <property name="buddy" >
+         <cstring>color_button3</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="color_button3" >
+        <property name="text" >
+         <string>Change</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="0" >
+     <layout class="QHBoxLayout" name="horizontalLayout_4" >
+      <item>
+       <widget class="QLabel" name="color_label4" >
+        <property name="text" >
+         <string>Channel &amp;4</string>
+        </property>
+        <property name="buddy" >
+         <cstring>color_button4</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="color_button4" >
+        <property name="text" >
+         <string>Change</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="4" column="0" >
+     <layout class="QHBoxLayout" name="horizontalLayout_5" >
+      <item>
+       <widget class="QLabel" name="color_label5" >
+        <property name="text" >
+         <string>Channel &amp;5</string>
+        </property>
+        <property name="buddy" >
+         <cstring>color_button5</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="color_button5" >
+        <property name="text" >
+         <string>Change</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="5" column="0" >
+     <layout class="QHBoxLayout" name="horizontalLayout_6" >
+      <item>
+       <widget class="QLabel" name="color_label6" >
+        <property name="text" >
+         <string>Channel &amp;6</string>
+        </property>
+        <property name="buddy" >
+         <cstring>color_button6</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="color_button6" >
+        <property name="text" >
+         <string>Change</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>390</x>
+     <y>160</y>
+     <width>182</width>
+     <height>52</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_4" >
+    <item>
+     <widget class="QLabel" name="series_time_label" >
+      <property name="minimumSize" >
+       <size>
+        <width>180</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize" >
+       <size>
+        <width>180</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text" >
+       <string>Single series nominal time, ms:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="series_time_edit" >
+      <property name="maximumSize" >
+       <size>
+        <width>100</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="readOnly" >
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget" >
+   <property name="geometry" >
+    <rect>
+     <x>230</x>
+     <y>230</y>
+     <width>443</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_18" >
+    <item>
+     <widget class="QGroupBox" name="schedule_box" >
+      <property name="enabled" >
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize" >
+       <size>
+        <width>230</width>
+        <height>191</height>
+       </size>
+      </property>
+      <property name="maximumSize" >
+       <size>
+        <width>230</width>
+        <height>191</height>
+       </size>
+      </property>
+      <property name="title" >
+       <string>Schedule</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4" >
+       <item row="0" column="0" >
+        <layout class="QVBoxLayout" name="verticalLayout_3" >
+         <item>
+          <widget class="QLabel" name="schedule_label" >
+           <property name="text" >
+            <string>Start series at:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_8" >
+           <item>
+            <widget class="QSpinBox" name="hours_box" >
+             <property name="maximum" >
+              <number>23</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="hours_label" >
+             <property name="text" >
+              <string>h</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="minutes_box" >
+             <property name="maximum" >
+              <number>59</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="minutes_label" >
+             <property name="text" >
+              <string>m</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="seconds_box" >
+             <property name="maximum" >
+              <number>59</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="seconds_label" >
+             <property name="text" >
+              <string>s</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="0" >
+        <layout class="QHBoxLayout" name="horizontalLayout_9" >
+         <item>
+          <widget class="QCheckBox" name="sd_box" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+           <property name="text" >
+            <string>Sd</string>
+           </property>
+           <property name="checked" >
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="mn_box" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+           <property name="text" >
+            <string>Mn</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="tue_box" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+           <property name="text" >
+            <string>Tue</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="wd_box" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+           <property name="text" >
+            <string>Wd</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0" >
+        <layout class="QHBoxLayout" name="horizontalLayout_10" >
+         <item>
+          <widget class="QCheckBox" name="th_box" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+           <property name="text" >
+            <string>Th</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="fr_box" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+           <property name="text" >
+            <string>Fr</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="sat_box" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+           <property name="text" >
+            <string>Sat</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0" >
+        <widget class="QCheckBox" name="schedule_repeat" >
+         <property name="text" >
+          <string>Repeat</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="cycle_box" >
+      <property name="enabled" >
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize" >
+       <size>
+        <width>200</width>
+        <height>180</height>
+       </size>
+      </property>
+      <property name="maximumSize" >
+       <size>
+        <width>200</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="title" >
+       <string>Cycle settings</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3" >
+       <item row="0" column="0" >
+        <layout class="QHBoxLayout" name="horizontalLayout_7" >
+         <item>
+          <widget class="QCheckBox" name="cycle_infinite" >
+           <property name="minimumSize" >
+            <size>
+             <width>60</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>60</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="text" >
+            <string>Infinite</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="cycle_number_label" >
+           <property name="minimumSize" >
+            <size>
+             <width>110</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>110</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="text" >
+            <string>Number of cycles:</string>
+           </property>
+           <property name="buddy" >
+            <cstring>cycle_interval_slider</cstring>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0" >
+        <layout class="QHBoxLayout" name="horizontalLayout_12" >
+         <item>
+          <widget class="QSlider" name="cycle_number_slider" >
+           <property name="minimumSize" >
+            <size>
+             <width>110</width>
+             <height>16</height>
+            </size>
+           </property>
+           <property name="minimum" >
+            <number>1</number>
+           </property>
+           <property name="maximum" >
+            <number>1000000</number>
+           </property>
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="cycle_number_spin" >
+           <property name="minimumSize" >
+            <size>
+             <width>60</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>60</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="minimum" >
+            <number>1</number>
+           </property>
+           <property name="maximum" >
+            <number>1000000</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="0" >
+        <widget class="QLabel" name="cycle_repeat_label" >
+         <property name="minimumSize" >
+          <size>
+           <width>145</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>145</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="text" >
+          <string>&amp;Repeat interval, ms</string>
+         </property>
+         <property name="buddy" >
+          <cstring>cycle_interval_slider</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <layout class="QVBoxLayout" name="verticalLayout_6" >
+         <item>
+          <widget class="QSlider" name="cycle_interval_slider" >
+           <property name="minimumSize" >
+            <size>
+             <width>160</width>
+             <height>16</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>160</width>
+             <height>16</height>
+            </size>
+           </property>
+           <property name="minimum" >
+            <number>1</number>
+           </property>
+           <property name="maximum" >
+            <number>86400000</number>
+           </property>
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="cycle_interval_spin" >
+           <property name="minimumSize" >
+            <size>
+             <width>80</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>80</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="minimum" >
+            <number>1</number>
+           </property>
+           <property name="maximum" >
+            <number>86400000</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>table_spin</tabstop>
+  <tabstop>chart_spin</tabstop>
+  <tabstop>measure_slider</tabstop>
+  <tabstop>measure_spin</tabstop>
+  <tabstop>interval_slider</tabstop>
+  <tabstop>interval_spin</tabstop>
+  <tabstop>color_button1</tabstop>
+  <tabstop>color_button2</tabstop>
+  <tabstop>color_button3</tabstop>
+  <tabstop>color_button4</tabstop>
+  <tabstop>color_button5</tabstop>
+  <tabstop>color_button6</tabstop>
+  <tabstop>filename_edit</tabstop>
+  <tabstop>filename_button</tabstop>
+  <tabstop>series_time_edit</tabstop>
+  <tabstop>single_button</tabstop>
+  <tabstop>cycled_button</tabstop>
+  <tabstop>scheduled_button</tabstop>
+  <tabstop>cycle_interval_slider</tabstop>
+  <tabstop>cycle_interval_spin</tabstop>
+  <tabstop>hours_box</tabstop>
+  <tabstop>minutes_box</tabstop>
+  <tabstop>seconds_box</tabstop>
+  <tabstop>schedule_repeat</tabstop>
+  <tabstop>sd_box</tabstop>
+  <tabstop>mn_box</tabstop>
+  <tabstop>tue_box</tabstop>
+  <tabstop>wd_box</tabstop>
+  <tabstop>th_box</tabstop>
+  <tabstop>fr_box</tabstop>
+  <tabstop>sat_box</tabstop>
+  <tabstop>cancel_button</tabstop>
+  <tabstop>proceed_button</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>measure_slider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>measure_spin</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>135</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>217</x>
+     <y>94</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>interval_slider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>interval_spin</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>115</x>
+     <y>147</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>217</x>
+     <y>152</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cancel_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>290</x>
+     <y>460</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>358</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cycle_interval_slider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>cycle_interval_spin</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>593</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>659</x>
+     <y>380</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cycle_interval_spin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>cycle_interval_slider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>659</x>
+     <y>384</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>593</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>measure_spin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>measure_slider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>217</x>
+     <y>94</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>120</x>
+     <y>89</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>interval_spin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>interval_slider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>217</x>
+     <y>152</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>52</x>
+     <y>147</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>interval_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>interval_spin</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>44</x>
+     <y>147</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>217</x>
+     <y>152</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>measure_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>measure_spin</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>66</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>217</x>
+     <y>94</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cycle_interval_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>cycle_interval_spin</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>593</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>659</x>
+     <y>391</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cycle_number_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>cycle_number_spin</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>520</x>
+     <y>332</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>625</x>
+     <y>327</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cycle_number_spin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>cycle_number_slider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>623</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>548</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cycle_number_slider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>cycle_number_spin</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>505</x>
+     <y>331</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>626</x>
+     <y>336</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
