@@ -16,54 +16,26 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "uhandler.h"
 
 UHandler::UHandler (QWidget *parent) : QObject (parent)
 {
 	// initializing public variables	
 	ccof = 0.02;	// AD conversion coefficient.
-//	cres = 0;	// AD conversion result variable
-	readbuf = 0;	// buffer variable for the incoming data
-
+	
 	char boardID[] = "USBModuleV01";	// hardware ID
 	char devprID[] = "www.bgb.netii.net";  // developer's ID
 
 	usb_init ();
 	if (!openDevice (&handle, USBDEV_SHARED_VENDOR, devprID, USBDEV_SHARED_PRODUCT, boardID)){
 		emit deviceError();
+		fprintf (stderr, "UHandler: Cannot open device.\n");
 	}
 //	fprintf (stderr, "UHandler: constructor did all successful.\n");
 }
 
 void UHandler::conversion_request()
 {
-/*//	fprintf (stderr, "UHandler: conversion started.\n");
-	for (int a = 0; a < 6; a++)
-	{
-//	fprintf (stderr, "UHandler: entering the loop.\n");
-//	fprintf (stderr, "UHandler: usb_control_msg().\n");
-            nbytes = usb_control_msg(
-            handle,
-            USB_TYPE_VENDOR | USB_RECIP_DEVICE | USB_ENDPOINT_IN,
-            REPORT_VALUES,      //request ID - look for further details in firmware source code
-            0,      // wValue, can contain some useful instructions
-            0,      // wIndex, has the same meaning as the wValue does
-            (char *) buffer,
-            sizeof(buffer),
-            1000 // timeout in milliseconds
-            );
-//	fprintf (stderr, "UHandler: usb_control_msg() done. Completing the buffer.\n");
-        	readbuf = buffer[0];
-		results[a] = readbuf*ccof;
-//	fprintf (stderr, "UHandler: going for string_data[].\n");
-//	fprintf (stderr, "Uhandler: doing sume business with pack.data[].\n");
-		pack.data[a] = QString::number (results[a], 'g', 6);
-	}
-//	fprintf (stderr, "UHandler: conversion finished.\n");
-*/
-//TODO: uncomment after burning of a new firmware.
 	nbytes = usb_control_msg(
 	handle,
 	USB_TYPE_VENDOR | USB_RECIP_DEVICE | USB_ENDPOINT_IN,
@@ -76,7 +48,7 @@ void UHandler::conversion_request()
 	for (int a = 0; a < 6; a ++)
 	{
 		results[a] = buffer[a]*ccof;
-		fprintf (stderr, "Result  %d = %f\n", a, results[a]);
+	//	fprintf (stderr, "UHandler: result  %d = %f\n", a, results[a]);
 		pack.data[a] = QString::number (results[a], 'g', 6);
 		
 	}

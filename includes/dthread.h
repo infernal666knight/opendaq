@@ -36,6 +36,7 @@ public:
 	DThread(); 
 	DConfig *config;			// настройки
 	UHandler *device;
+	unsigned int cur_measure;	// measurements counter
 
 public slots:
 	//void deliver_data ();	// приём резльутата от device
@@ -59,7 +60,6 @@ signals:
 
 private:
 	volatile bool stopped;	// Переменная-флаг, служит для управления потоком.
-	unsigned int cur_measure;	// measurements counter
 	unsigned int cur_cycle;	// cycle counter
 };
 #endif

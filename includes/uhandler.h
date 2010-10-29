@@ -20,6 +20,9 @@
 #define UHANDLER_H
 #include <QObject>
 #include <QWidget>
+#include <QString>
+#include <stdio.h>
+#include <stdlib.h>
 #include <usb.h>
 #include "dpack.h"
 
@@ -43,7 +46,6 @@
 #define REF_EXTERNAL 4
 #define REF_SUPPLY 5
 
-
 class UHandler : public QObject
 {
 	Q_OBJECT
@@ -51,7 +53,6 @@ class UHandler : public QObject
 public:
 	double ccof; // conversion coefficient;
 	double results[6];
-//	QString string_data[6];
 	DPack pack;
 	UHandler (QWidget *parent = 0);	
 	
@@ -67,7 +68,6 @@ signals:
 private:
 	usb_dev_handle *handle;
 	unsigned char buffer[8];
-	int readbuf; // buffer's single byte
 	int nbytes;  // byte counter
 
 	int getString (usb_dev_handle *dev, int index, int langid, char *buf, int buflen);

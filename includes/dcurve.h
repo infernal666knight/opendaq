@@ -70,13 +70,13 @@ public:
 	double *bufX;		// pointer to curX;
 	double *bufY;		// pointer to curY
 
-	double getMaxX ();	// returns maxX;
-	double getCurX ();	// returns curX;
-	double getStepX ();	// returns stepX;
+//	double getMaxX ();	// returns maxX;
+//	double getCurX ();	// returns curX;
+//	double getStepX ();	// returns stepX;
 
-	void setMaxX (double x);
-	void setCurX (double x);
-	void setStepX (double x);
+//	void setMaxX (double x);
+//	void setCurX (double x);
+//	void setStepX (double x);
 	
 
 public slots:

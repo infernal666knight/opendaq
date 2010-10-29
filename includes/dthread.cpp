@@ -49,6 +49,10 @@ void DThread::deliver_data (DPack *pack)
 	{
 		emit chart_data(pack);
 		fprintf (stderr, "DThread: chart_data() emitted. cur_measure = %d.\n", cur_measure);
+		if (cur_measure == config->measure_num)
+		{
+			fprintf (stderr, "LEAK OR END DETECTED!!!\n");
+		}
 	}
 	if ( (cur_measure%config->table_mod) == 0 )
 	{
@@ -65,6 +69,8 @@ void DThread::deliver_data (DPack *pack)
 void DThread::set_config (DConfig *cfg)
 {
 	config = cfg;
+	cur_cycle = 0;
+	cur_measure = 0;
 	fprintf (stderr, "DThread: Config accepted.\n");
 	fprintf (stderr, "DThread: measure_num : %d\n", config->measure_num);
 }
@@ -79,22 +85,32 @@ void DThread::run ()
 	if (!stopped)
 	{
 		emit started();
-		cur_measure = 0;
-		cur_cycle = 0;
-		switch (config->mode)
+		/*switch (config->mode)
 		{
-			case SINGLE_MODE:
-				emit series_start();
-				while (cur_measure < config->measure_num)
+			case SINGLE_MODE:*/
+			//	emit series_start();
+	/*			while (cur_measure < config->measure_num)
 				{
 					if (stopped)
 						break;
 					device->conversion_request();
-					cur_measure++;
+					fprintf (stderr, " ### MEASURE NUMBER %d ###\n", cur_measure);
 					usleep (pause);
+					cur_measure++;
 				}
-				break;
+*/
+			for (cur_measure = 0; cur_measure < config->measure_num; cur_measure++)
+			{
+				if (stopped) break;
+				device->conversion_request();
+				fprintf (stderr, " ### MEASURE NUMBER %d ###\n", cur_measure);
+				usleep (pause);
+			}
+	}
 
+/*
+				break;
+	
 			case CYCLED_MODE:
 				switch (config->cycle_mode)
 				{
@@ -136,7 +152,8 @@ void DThread::run ()
 			case SCHEDULED_MODE:
 				break;
 		}
-		emit done();
-	}
+	}*/
+	emit done();
+	stopped = false;
 }
 

@@ -20,9 +20,9 @@
 CurveData::CurveData():
     d_count(0)
 {
-	double x = 0;
-	double y = 0;
-	append (&x, &y, 1);
+//	double x = 0;
+//	double y = 0;
+//	append (&x, &y, 1);
 }
 
 void CurveData::append(double *x, double *y, int count)
@@ -100,7 +100,7 @@ void DCurve::clear()
 		channel_curve[a]->detach();
 	}
 }
-
+/*
 double DCurve::getMaxX()
 {
 	return maxX;
@@ -133,21 +133,21 @@ void DCurve::setStepX (double x)
 	if ( (x !=stepX) && (x < maxX) && (x > 0) )
 		stepX = x;
 }
-
+*/
 void DCurve::accept_data_pack (DPack *pack)
 {
-	fprintf (stderr, "Accepting data pack.\n");
+//	fprintf (stderr, "Accepting data pack.\n");
 	curX += stepX;
 	fprintf (stderr, "DCurve: stepX = %f; curX = %f.\n ", stepX, curX);
 	for (int a = 0; a < 6; a++)
 	{
 		curY = pack->data[a].toDouble();
-		fprintf (stderr, "toDouble() : %f.\n", curY);
+	//	fprintf (stderr, "toDouble() : %f.\n", curY);
 		channel_data[a]->append (&curX, &curY, 1);
-		fprintf (stderr, "Appended.\n");
+	//	fprintf (stderr, "Appended.\n");
 		channel_curve[a]->setRawData (channel_data[a]->x(), channel_data[a]->y(), channel_data[a]->count());
-		fprintf (stderr, "setRawData() done.\n");
+	//	fprintf (stderr, "setRawData() done.\n");
 	}
 	emit pack_accepted();
-	fprintf (stderr, "SIGNAL: pack_accepted.\n");
+//	fprintf (stderr, "DCurve: SIGNAL: pack_accepted.\n");
 }

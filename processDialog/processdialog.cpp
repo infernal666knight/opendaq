@@ -45,9 +45,9 @@ ProcessDialog::ProcessDialog (QWidget *parent) : QDialog (parent)
 
 	/*	Connections	*/
 	connect (aCurve, SIGNAL ( pack_accepted () ), plot, SLOT ( replot() ));
-	connect (aCurve, SIGNAL ( pack_accepted () ), this, SLOT (graph_next_frame()) );
+//	connect (aCurve, SIGNAL ( pack_accepted () ), this, SLOT (graph_next_frame()) );
 	connect (writeThread, SIGNAL ( text_data (DPack *) ), this, SLOT ( process_pack (DPack *) ));
-	connect (writeThread, SIGNAL ( chart_data (DPack *) ), aCurve, SLOT ( accept_data_pack (DPack *) ));
+//	connect (writeThread, SIGNAL ( chart_data (DPack *) ), aCurve, SLOT ( accept_data_pack (DPack *) ));
 	connect (writeThread, SIGNAL ( save_data (DPack *) ), saver, SLOT (accept_data_pack (DPack *) ));
 	connect (writeThread, SIGNAL ( done()), this, SLOT ( done()));
 	connect (this, SIGNAL (rejected()), writeThread, SLOT (stop_thread()));
@@ -202,6 +202,17 @@ void ProcessDialog::set_config (DConfig *cfg)
 void ProcessDialog::process_pack (DPack *pack)
 {
 	row++;
+/*	if ((writeThread->cur_measure > 0) && ((aCurve->curX-1) != writeThread->cur_measure))
+	{
+		fprintf (stderr, "######### Error: curX != cur_measure #####\n");
+		fprintf (stderr, "cur_measure == %d; curX == %f\n", writeThread->cur_measure, aCurve->curX);
+		writeThread->stop_thread();
+	}*/
+	if (writeThread->cur_measure >= config->measure_num)
+	{
+		writeThread->stop_thread();
+		fprintf (stderr, "cur_measure reached it's maximum. Thread stopped.\n");
+	}
 	fprintf (stderr, "Row number %d:\n", row+1);
 	for (int a = 0; a < 6; a++)
 	{
